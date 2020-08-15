@@ -19,7 +19,7 @@ Well, we want a cluster, so let's go and create some VMs (Droplets in DigitalOce
 
 As k3s is a lightweight Kubernetes distribution, we can use any VM size. We're going to run on Ubuntu 20.04 LTS. This is probably not the preferred distribution for production use, but the sake of this, it's great!
 
-![Choosing an OS](choose_os.PNG)
+![Choosing an OS](choose_os.png)
 
 I'm using the smallest (cheapest, $5/month) which is perfectly responsive for this purpose.
 
