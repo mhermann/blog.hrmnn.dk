@@ -17,32 +17,41 @@ So, that's what we're gonna look at here.
 
 Well, we want a cluster, so let's go and create some VMs (Droplets in DigitalOcean terms). Let's create 3.
 
-As k3s is a lightweight Kubernetes distribution, we can use any VM size. I'm using the smallest (cheapest, $5/month) which is perfectly responsive for this purpose.
-The naming and location doesn't really matter for this purpose, so let's just use the default naming and create them in Frankfurt because it's fairly close to me.
+As k3s is a lightweight Kubernetes distribution, we can use any VM size. We're going to run on Ubuntu 20.04 LTS. This is probably not the preferred distribution for production use, but the sake of this, it's great!
 
-**add pic**
+![Choosing an OS](Choose OS.PNG)
+
+I'm using the smallest (cheapest, $5/month) which is perfectly responsive for this purpose.
+
+![Choosing VM size](Choose size.png)
+
+The location doesn't really matter for this purpose, so I'll create them in Frankfurt because it's fairly close to me.
+
+![Choosing a region](Region.png)
 
 I'm using a default VPC in which all my machines in Frankfurt are placed. This is to enable the VMs to communicate easily with each other. **You probably shouldn't do this for production purposes**.
 
-**add vpc pic**
+![Choosing VPC](VPC.png)
 
 I use the previously mentioned SSH key to authenticate with the VMs. k3sup doesn't support password authentication so this is required. And much easier.
 
-**add auth pic**
+![Choosing a SSH key for authentication](Authentication.png)
 
 I create 3 instances and as mentioned, I don't care about the naming as we'll just scrap them later on.
 
-**Add picture of 3 instances and naming**
+![Choose to create 3 instances with default naming](Names.png)
 
 Add them to a project. Name it something - for instance "k3sup test".
 
 Press "Create Droplet". The machines should be ready in ~1 minute. **Success!**
 
-**Add picture of VMs creating**
+![The instances are creating](Creating.png)
 
 ## Installing Kubernetes
 
 Now we're ready! The fun starts now. Let's install Kubernetes on the master node. You can just choose any of the machines you just created and copy it's IP address.
+
+![Copying IP address of VM](Copy IP.png)
 
 Go to you terminal and navigate to where you've placed the k3sup executable. I'm running on Windows and have mine in c:/tools/k3sup.
 
