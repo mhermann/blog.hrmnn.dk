@@ -57,7 +57,7 @@ Go to you terminal and navigate to where you've placed the k3sup executable. I'm
 
 Execute the following command:
 
-```
+```shell
 k3sup install --ip the-ip-you-copied
 ```
 
@@ -65,14 +65,14 @@ You may be prompted for the password for the ssh key. Enter it.
 
 While installing, k3sup will output what's happening. When it's done, you should see a message confirming the success and you should have a kubeconfig in the current directory. Try running
 
-```
+```shell
 dir
 ```
 To confirm this.
 
 Let's verify that the node has been added and is ready before continuing.
 
-```
+```shell
 kubectl --kubeconfig=KUBECONFIG get nodes
 ```
 
@@ -84,7 +84,7 @@ Let's proceed to adding the worker nodes to the cluster.
 
 Copy the IP of another VM and run the following command
 
-```
+```shell
 k3sup join --server-ip ip-of-server-node --ip ip-of-worker-node
 ```
 
@@ -94,7 +94,7 @@ You should now see a log of k3sup installing Kubernetes and joining the node int
 
 Use the previous command once again to verify that the node has been added.
 
-```
+```shell
 kubectl --kubeconfig=KUBECONFIG get nodes
 ```
 
