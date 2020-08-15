@@ -19,39 +19,39 @@ Well, we want a cluster, so let's go and create some VMs (Droplets in DigitalOce
 
 As k3s is a lightweight Kubernetes distribution, we can use any VM size. We're going to run on Ubuntu 20.04 LTS. This is probably not the preferred distribution for production use, but the sake of this, it's great!
 
-![Choosing an OS](Choose OS.PNG)
+![Choosing an OS](choose_os.PNG)
 
 I'm using the smallest (cheapest, $5/month) which is perfectly responsive for this purpose.
 
-![Choosing VM size](Choose size.png)
+![Choosing VM size](choose_size.png)
 
 The location doesn't really matter for this purpose, so I'll create them in Frankfurt because it's fairly close to me.
 
-![Choosing a region](Region.png)
+![Choosing a region](region.png)
 
 I'm using a default VPC in which all my machines in Frankfurt are placed. This is to enable the VMs to communicate easily with each other. **You probably shouldn't do this for production purposes**.
 
-![Choosing VPC](VPC.png)
+![Choosing VPC](vpc.png)
 
 I use the previously mentioned SSH key to authenticate with the VMs. k3sup doesn't support password authentication so this is required. And much easier.
 
-![Choosing a SSH key for authentication](Authentication.png)
+![Choosing a SSH key for authentication](authentication.png)
 
 I create 3 instances and as mentioned, I don't care about the naming as we'll just scrap them later on.
 
-![Choose to create 3 instances with default naming](Names.png)
+![Choose to create 3 instances with default naming](names.png)
 
 Add them to a project. Name it something - for instance "k3sup test".
 
 Press "Create Droplet". The machines should be ready in ~1 minute. **Success!**
 
-![The instances are creating](Creating.png)
+![The instances are creating](creating.png)
 
 ## Installing Kubernetes
 
 Now we're ready! The fun starts now. Let's install Kubernetes on the master node. You can just choose any of the machines you just created and copy it's IP address.
 
-![Copying IP address of VM](Copy IP.png)
+![Copying IP address of VM](copy_ip.png)
 
 Go to you terminal and navigate to where you've placed the k3sup executable. I'm running on Windows and have mine in c:/tools/k3sup.
 
